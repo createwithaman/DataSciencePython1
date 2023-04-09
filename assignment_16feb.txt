@@ -1,0 +1,60 @@
+Q1. What is a database? Differentiate between SQL and NoSQL databases.
+Ans - A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.
+Data within the most common types of databases in operation today is typically modeled in rows and columns in a series of tables to make processing and data querying efficient. The data can then be easily accessed, managed, modified, updated, controlled, and organized. Most databases use structured query language (SQL) for writing and querying data
+SQL	NoSQL
+RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS)	Non-relational or distributed database system.
+These databases have fixed or static or predefined schema	They have dynamic schema
+These databases are not suited for hierarchical data storage.	These databases are best suited for hierarchical data storage.
+These databases are best suited for complex queries	These databases are not so good for complex queries
+Vertically Scalable	Horizontally scalable
+Follows ACID property	Follows CAP(consistency, availability, partition tolerance)
+Examples: MySQL, PostgreSQL, Oracle, MS-SQL Server, etc	Examples: MongoDB, GraphQL, HBase, Neo4j, Cassandra, etc
+
+Q2. What is DDL? Explain why CREATE, DROP, ALTER, and TRUNCATE are used with an example.
+Ans - Data definition language (DDL) describes the portion of SQL that creates, alters, and deletes database objects. These database objects include schemas, tables, views, sequences, catalogs, indexes, variables, masks, permissions, and aliases
+
+Q3. What is DML? Explain INSERT, UPDATE, and DELETE with an example.
+Ans = The structured query language (SQL) commands deal with the manipulation of data present in the database that belongs to the DML or Data Manipulation Language. This includes most of the SQL statements.
+Data Manipulation Language (DML) is used to modify the instance of the database by inserting, updating, and deleting its data.
+in sql with the help of insert we can insert data in any rows and columns and not only data we can insert whole rows and columns.
+and use of updated we can updated values and data and with the use of delete we can remove the data from our datasheet.
+
+
+Q4. What is DQL? Explain SELECT with an example.
+Query languages, often known as DQLs or Data Query Languages, are computer languages that are used to make various queries in information systems and databases. The Structured Query Language (SQL) is a well-known example. DQL statements are used to query the data contained in schema objects. The primary goal of the DQL Command is to return a schema relation depending on the query supplied to it.
+The SELECT statement is used to select data from a database. The data returned is stored in a result table, called the result-set.
+
+
+
+
+
+Q5. Explain Primary Key and Foreign Key.
+A primary key uniquely identifies a row in a table, while a foreign key is used to link two tables together by referencing the primary key of the related table. The most important difference that you should note here is that a primary key cannot have a NULL value, whereas a foreign key can accept NULL values.
+
+Q6. Write a python code to connect MySQL to python. Explain the cursor() and execute() method.
+1st we wrtie step than write code.
+1st connect sql wwith server than creat database and than come in python and create file and import mysql.connecter file than connect with the user or id and password .
+lets write code
+import mysql.connector 
+mydb = mysql.connector.connect(
+    host = " localhost",
+    user = "abc",
+    password ="password"
+)
+print(mydb)
+mycursor = mydb.cursor()
+mycursor.execute("SHOW DATABASE")
+mydb.close
+
+with thas functions we can connect our sql in python
+
+Q7. Give the order of execution of SQL clauses in an SQL query.
+Query order of execution
+FROM and JOIN s. The FROM clause, and subsequent JOIN s are first executed to determine the total working set of data that is being queried. ...
+WHERE. ...
+GROUP BY. ...
+HAVING. ...
+SELECT. ...
+DISTINCT. ...
+ORDER BY. ...
+LIMIT / OFFSET
